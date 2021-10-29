@@ -1,0 +1,2 @@
+dmenu conky nitrogen picom compton nvidia vscode blender gimp kdenlive 
+libreoffice-still kitty telegram-desktop discord steam (multilib)
