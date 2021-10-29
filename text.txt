@@ -1,3 +1,5 @@
 dmenu conky nitrogen picom compton nvidia vscode blender gimp kdenlive 
 libreoffice-still kitty telegram-desktop discord steam (multilib)
 scrot thunar obs lxapperance
+sudo -i
+localectl set-x11-keymap us,ru pc104 "" grp:alt_shift_toggle
