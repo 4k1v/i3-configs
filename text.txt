@@ -6,3 +6,4 @@ xfce4 settings
 localectl set-x11-keymap us,ru pc104 "" grp:alt_shift_toggle
 exec setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle,grp_led:scroll" &
 songrec
+https://www.xfce-look.org/p/1640982
