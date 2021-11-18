@@ -7,3 +7,8 @@ localectl set-x11-keymap us,ru pc104 "" grp:alt_shift_toggle
 exec setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle,grp_led:scroll" &
 songrec
 https://www.xfce-look.org/p/1640982
+exec picom
+exec scrot
+exec xrandr --output HDMI-1 --mode 1920x1080
+exec_always --no-startup-id nitrogen Downloads --restore
+exec --no-startup-id polybar example
