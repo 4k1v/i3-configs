@@ -95,6 +95,8 @@ static Key keys[] = {
         { MODKEY,                        XK_F3,    spawn,           {.v=cord} },
         { MODKEY,                        XK_F1,    spawn,           {.v=furi} },
         { MODKEY,                        XK_F2,    spawn,            {.v=man} },
+	{ MODKEY,                       XK_x,      incnmaster,     {.i = -1 } },
+
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
