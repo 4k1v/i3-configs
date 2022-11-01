@@ -4,21 +4,26 @@ Plug 'morhetz/gruvbox',{ 'branch': 'master' }
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'rakr/vim-colors-rakr', { 'branch': 'master' }
-Plug 'zah/nim.vim'
-Plug 'ervandew/supertab'
-Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'Mofiqul/adwaita.nvim'
+Plug 'alaviss/nim.nvim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'tenxsoydev/size-matters.nvim'
+Plug 'davidhalter/jedi-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-imap <c-space> <Plug>(asyncomplete_force_refresh)
-" For Vim 8 (<c-@> corresponds to <c-space>):
-" imap <c-@> <Plug>(asyncomplete_force_refresh)
-let g:asyncomplete_auto_popup = 0
 colorscheme adwaita
 display lightline
+set expandtab ts=4 sw=4 ai
 set laststatus=2
-let g:SuperTabDefaultCompletionType = "<C-n>"
 set noshowmode
 autocmd vimenter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
 set number
+au User asyncomplete_setup call asyncomplete#register_source({
+    \ 'name': 'nim',
+    \ 'whitelist': ['nim'],
+    \ 'completor': {opt, ctx -> nim#suggest#sug#GetAllCandidates({start, candidates -> asyncomplete#complete(opt['name'], ctx, start, candidates)})}
+    \ })
+
+
