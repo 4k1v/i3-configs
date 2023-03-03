@@ -86,7 +86,7 @@ bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+h split h
-bindsym $mod+F4 exec scrot
+bindsym $mod+F4 exec scrot 
 # split in vertical orientation
 bindsym $mod+v split v
 
@@ -189,21 +189,34 @@ bindsym $mod+Shift+r mode "resize"
 exec setxkbmap us,ru -option 'grp:atl_shift_toggle'
 bindsym $mod + F1 exec chromium
 bindsym $mod + F2 exec pcmanfm
-bindsym $mod + F3 exec ./Downloads/lightcord
+bindsym $mod + F3 exec ./Downloads/lightcord --no-sandbox
+bindsym $mod + F5 exec flameshot gui
+bindsym $mod + F6 exec nuclear --no-sandbox
 exec --no-startup-id nitrogen /home/user/Downloads/  --restore
+bar {
+        status_command i3status
+        position top
+        height 30
+        colors
+        { 
+            background #1F2936
+
+        }
+}
 floating_modifier $mod
 focus_follows_mouse no
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 1
 for_window [class="i3bar"] gaps outer current set 3
-gaps inner 3
-gaps outer 1
-client.focused              #bf616a #2f343f #d8dee8 #bf616a #d8dee8
-client.focused_inactive     #2f343f #kf343f #d8dee8 #2f343f #2f343f
-client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.placeholder          #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.background           #2f343f
-exec polybar example
-exec picom
+gaps inner 1
+gaps outer 0
+client.focused              #426587 #426587 #426587 #426587 #426587
+client.focused_inactive     #426587 #426587 #426587 #426587 #426587
+client.unfocused            #426587 #426587 #426587 #426587 #426587
+client.urgent               #426587 #426587 #426587 #426587 #426587
+client.placeholder          #426587 #426587 #426587 #426587 #426587
+client.background           #426587 #426587 #426587 #426587 #426587
+exec picom -f
 exec_always --no-startup-id nitrogen Downloads --restore
-exec --no-startup-id setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle,grp_led:scroll" &
+exec --no-startup-id setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle,grp_led:scroll" 
+exec setxkbmap "us,ru" ",winkeys" "grp:alt_shift_toggle,grp_led:scroll";
+
